@@ -1,16 +1,16 @@
 import { defineProps } from 'vue';
 <template>
     <div class="tweet">
-
-        <ProfileImage :image="props.tweet.user.image"/>
-
+        <ProfileImage />
         <div class="body">
             <div class="top">
-                <User :name="props.tweet.user.name" :handle="props.tweet.user.handle" />
-                <Timestamp :timestamp="props.tweet.timestamp" />
+                <span class="user">
+                    <User />
+                </span>
+                <Timestamp />
             </div>
 
-            <Message :message="props.tweet.message" />
+            <Message />
 
             <Actions />
         </div>
@@ -23,20 +23,15 @@ import { defineProps } from 'vue';
 
 <script setup>
 
-
-import {defineProps} from 'vue';
-
 import ProfileImage from './ProfileImage.vue';
 import User from './User.vue';
-import Actions from './Actions.vue';
-import Message from './Message.vue';
 import Timestamp from './Timestamp.vue';
+import Message from './Message.vue';
+import Actions from './Actions.vue';
 
 
-
+import {defineProps} from 'vue'
 const props = defineProps(["tweet"]);
-
-
 
 </script>
 
